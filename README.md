@@ -1,3 +1,6 @@
+# DXSpinnerDemo
+cocos2dx picker like ios UIPickerView
+
 
 like iOS UIPickerView
 
