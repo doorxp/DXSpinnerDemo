@@ -73,7 +73,7 @@ bool HelloWorld::init()
     
     pSpinner->setDelegate(this);
     pSpinner->setDataSource(this);
-    pSpinner->setContentSize(cocos2d::Size(400, 200));
+    pSpinner->setContentSize(cocos2d::Size(800, 400));
     
     this->addChild(pSpinner);
 
@@ -102,7 +102,7 @@ ssize_t HelloWorld::numberOfComponents(DXSpinner *spinner) {return 4;}
 
 
 void HelloWorld::didSelectRowInComponent(DXSpinner *spinner, ssize_t row, ssize_t inComponent) {
-    CCLOG("Component:%d row:%d", (int)inComponent, (int)row);
+//    CCLOG("Component:%d row:%d", (int)inComponent, (int)row);
 }
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
