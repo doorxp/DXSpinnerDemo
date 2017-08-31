@@ -66,7 +66,7 @@ bool HelloWorld::init()
     
     pSpinner = nullptr;
     
-     setSpinner(DXSpinner::spinner());
+    setSpinner(DXSpinner::spinner());
     
     pSpinner->setBackGroundColor(cocos2d::Color3B::BLUE);
     pSpinner->setBackGroundColorType(cocos2d::ui::Layout::BackGroundColorType::SOLID);

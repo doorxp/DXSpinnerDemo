@@ -20,6 +20,7 @@ public:
     virtual bool init();
     
 public:
+    //public api
     static DXSpinner *spinner();
     
     ssize_t numberOfComponents();
@@ -31,6 +32,10 @@ public:
     ssize_t selectedRow(ssize_t inComponent);
     
     void selectRow(ssize_t row, ssize_t inComponent, bool animated);
+    
+    CC_SYNTHESIZE(DXSpinnerDelegate *, pDelegate, Delegate);
+    CC_SYNTHESIZE(DXSpinnerDataSource *, pDataSource, DataSource);
+    
     
 public:
     
@@ -47,9 +52,7 @@ public:
     
     CC_SYNTHESIZE_RETAIN(cocos2d::DrawNode *, pIndicator, Indicator);
     CC_SYNTHESIZE_RETAIN(cocos2d::ClippingNode *, pMask, Mask);
-    CC_SYNTHESIZE(DXSpinnerDelegate *, pDelegate, Delegate);
-    CC_SYNTHESIZE(DXSpinnerDataSource *, pDataSource, DataSource);
-    
+
 public:
     void setParent(Node * parent);
 protected:
@@ -72,12 +75,14 @@ protected:
     std::vector<ssize_t> vSelectedRows;
 };
 
+//Delegate
 struct DXSpinnerDelegate : ProtocolBase {
     virtual const std::string titleForRowInComponent(DXSpinner *spinner, ssize_t row, ssize_t inComponent) = 0;
     
     virtual void didSelectRowInComponent(DXSpinner *spinner, ssize_t row, ssize_t inComponent) {}
 };
 
+//DataSource
 struct DXSpinnerDataSource : ProtocolBase {
     virtual ssize_t numberOfComponents(DXSpinner *spinner) {return 1;};
     virtual ssize_t numberOfRowsInComponent(DXSpinner *spinner, ssize_t inComponent) = 0;
