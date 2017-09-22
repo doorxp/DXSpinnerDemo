@@ -73,6 +73,13 @@ protected:
     ssize_t iComponents;
     
     std::vector<ssize_t> vSelectedRows;
+public:
+    virtual ~DXSpinner() {
+        setMask(nullptr);
+        setIndicator(nullptr);
+        pDelegate = nullptr;
+        pDataSource = nullptr;
+    }
 };
 
 //Delegate
